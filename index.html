@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript">
+       			function mailer()
+                 {
+                 	if(window.XMLHttpRequest)
+                 	{
+                 		xmlhttp= new XMLHttpRequest();
+                 	}
+                 	else
+                 	{
+                 		xmlhttp= new ActiveXObject('Microsoft.XMLHTTP');
+                 	}
+                 	xmlhttp.onreadystatechange = function(){
+                         if(xmlhttp.readyState==4&& xmlhttp.status==200)
+                         {
+                         	document.getElementById('feed').innerHTML = xmlhttp.responseText;
+                         }
+                 	}
+                 	xmlhttp.open('GET','index2.php?to=' + document.email.email_id.value,true);
+                 	xmlhttp.send();
+                 }		
+                 </script>
+	</head>
+	<body>
+		<form name="email">
+		    <input type="text" name="email_id"/>
+		    <input type="submit" value="Submit" onclick="mailer()"/>
+		</form>
+		<div id="feed"></div>
+	</body>
+</html>
