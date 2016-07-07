@@ -4,25 +4,16 @@ if(isset($_GET['to']))
 	$to=$_GET['to'];
 	if(!empty($to))
 	{
-$body="hello";
-$subject="Hello";
-$header="From: someone@gmail.com";
-if(mail($to, $subject, $body,$header))
-{
-	echo 'Email sent';
-}
+		echo 'Hello';
+	}
 else
 {
-	echo 'Could not send';
+	echo 'Sorry';
 }
 }
 else
 {
-	echo 'Please enter email';
+	echo 'Sorry';
 }
-}
-else
-{
-	echo 'Could not send';
-}
+
 ?>
